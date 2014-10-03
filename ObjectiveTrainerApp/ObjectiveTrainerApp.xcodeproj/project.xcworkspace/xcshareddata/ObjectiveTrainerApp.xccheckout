@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BA4298C5-D07B-4260-8E19-913A0DB9D7E3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ObjectiveTrainerApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D98D8E4E963CE15980AB36C67ECB69B764CD4AA2</key>
+		<string>https://github.com/daveyrockit/ObjectiveTrainer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ObjectiveTrainerApp/ObjectiveTrainerApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D98D8E4E963CE15980AB36C67ECB69B764CD4AA2</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/daveyrockit/ObjectiveTrainer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D98D8E4E963CE15980AB36C67ECB69B764CD4AA2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D98D8E4E963CE15980AB36C67ECB69B764CD4AA2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ObjectiveTrainer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+enum ScreenType {
+    ScreenTypeQuestion,
+    ScreenTypeStats,
+    ScreenTypeAbout,
+    ScreenTypeRemoveAds
+};
+
 @interface MenuModel : NSObject
+
+- (NSArray *)getMenuItems;
 
 @end

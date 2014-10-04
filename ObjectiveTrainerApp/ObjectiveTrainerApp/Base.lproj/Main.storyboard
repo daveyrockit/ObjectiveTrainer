@@ -9,15 +9,93 @@
             <objects>
                 <viewController storyboardIdentifier="QuestionViewController" id="BYZ-38-t0r" customClass="QuestionViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="7Ja-t7-tbR"/>
+                        <viewControllerLayoutGuide type="bottom" id="hnb-cx-GDC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="DJp-P3-z4m">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uz-G4-QHC">
+                                <rect key="frame" x="36" y="42" width="527" height="213"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6X9-aC-mS4">
+                                <rect key="frame" x="213" y="364" width="174" height="45"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="questionMCAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HL0-nC-05E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX4-Fu-l0B">
+                                <rect key="frame" x="212" y="417" width="174" height="45"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="questionMCAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4nS-lS-5Vm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cP-Vi-uEi">
+                                <rect key="frame" x="213" y="470" width="174" height="45"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="questionMCAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bCK-db-ige"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type in your answer (case sensitive)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWd-G1-XIh">
+                                <rect key="frame" x="121" y="260" width="359" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSo-kg-qrf">
+                                <rect key="frame" x="121" y="311" width="359" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-59-oNd">
+                                <rect key="frame" x="257" y="349" width="85" height="42"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="blankSubmitted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0FW-yp-Xjk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5q-bt-d4A">
+                                <rect key="frame" x="30" y="42" width="538" height="222"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcT-Hm-Brs">
+                                <rect key="frame" x="51" y="539" width="46" height="30"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n90-jo-lL3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </scrollView>
                     <navigationItem key="navigationItem" id="k27-Dg-Z3g"/>
+                    <connections>
+                        <outlet property="blankTextField" destination="fSo-kg-qrf" id="nHX-Lg-KkK"/>
+                        <outlet property="imageQuestionImageView" destination="G5q-bt-d4A" id="0wf-7T-rTK"/>
+                        <outlet property="instructionLabelForBlank" destination="uWd-G1-XIh" id="KPZ-aD-0P5"/>
+                        <outlet property="questionMCAnswer1" destination="6X9-aC-mS4" id="HX3-M9-trj"/>
+                        <outlet property="questionMCAnswer2" destination="NX4-Fu-l0B" id="5Qe-9M-JTI"/>
+                        <outlet property="questionMCAnswer3" destination="4cP-Vi-uEi" id="CbW-GM-rhy"/>
+                        <outlet property="questionScrollView" destination="DJp-P3-z4m" id="IDb-ra-0Gv"/>
+                        <outlet property="questionText" destination="9uz-G4-QHC" id="28q-aa-x4W"/>
+                        <outlet property="skipButton" destination="wcT-Hm-Brs" id="fn5-zg-4S2"/>
+                        <outlet property="submitAnswerForBlankButton" destination="e7j-59-oNd" id="gEt-WQ-fPp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

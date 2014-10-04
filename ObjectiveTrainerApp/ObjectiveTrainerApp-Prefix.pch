@@ -6,6 +6,8 @@
 
 #import <Availability.h>
 #import "MenuModel.m"
+#import "QuestionModel.m"
+
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -16,9 +18,21 @@
     #import <Foundation/Foundation.h>
 #endif
 
-enum ScreenType {
+typedef enum ScreenType {
     ScreenTypeQuestion,
     ScreenTypeStats,
     ScreenTypeAbout,
     ScreenTypeRemoveAds
-};
+} MenuItemScreenType;
+
+typedef enum QuestionType {
+    QuestionTypeMC,
+    QuestionTypeBlank,
+    QuestionTypeImage
+} QuizQuestionType;
+
+typedef enum QuestionDifficulty {
+    QuestionDifficultyEasy,
+    QuestionDifficultyMedium,
+    QuestionDifficultyHard,
+} QuizQuestionDifficulty;

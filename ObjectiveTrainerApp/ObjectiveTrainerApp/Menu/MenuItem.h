@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MenuModel.h"
 
 @interface MenuItem : NSObject
 
 @property (strong, nonatomic) NSString *menuTitle;
 @property (strong, nonatomic) NSString *menuIcon;
-@property (nonatomic) int screenType;
+@property (nonatomic) MenuItemScreenType screenType;
 
 @end

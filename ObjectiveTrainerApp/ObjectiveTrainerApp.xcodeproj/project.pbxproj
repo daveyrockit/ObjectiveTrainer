@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8976B1AF19DF519500168BFC /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8976B1AE19DF519500168BFC /* MenuItem.m */; };
+		8976B1B419DF85AF00168BFC /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 8976B1B319DF85AF00168BFC /* Question.m */; };
 		898F412919DE6D0900D585DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F412819DE6D0900D585DE /* main.m */; };
 		898F412C19DE6D0900D585DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F412B19DE6D0900D585DE /* AppDelegate.m */; };
 		898F412F19DE6D0900D585DE /* ObjectiveTrainerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 898F412D19DE6D0900D585DE /* ObjectiveTrainerApp.xcdatamodeld */; };
@@ -43,6 +44,9 @@
 		8976B1AD19DF519500168BFC /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuItem.h; path = Menu/MenuItem.h; sourceTree = "<group>"; };
 		8976B1AE19DF519500168BFC /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuItem.m; path = Menu/MenuItem.m; sourceTree = "<group>"; };
 		8976B1B119DF6DB000168BFC /* ObjectiveTrainerApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectiveTrainerApp-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		8976B1B219DF85AF00168BFC /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Question/Question.h; sourceTree = "<group>"; };
+		8976B1B319DF85AF00168BFC /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = Question/Question.m; sourceTree = "<group>"; };
+		8976B1B519DF939C00168BFC /* QuestionImportHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionImportHeader.h; sourceTree = "<group>"; };
 		898F412319DE6D0900D585DE /* ObjectiveTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898F412719DE6D0900D585DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		898F412819DE6D0900D585DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -188,10 +192,13 @@
 		89E268A919DF2F4B006D519A /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				89E268B219DF33FE006D519A /* QuestionViewController.h */,
-				89E268B319DF33FE006D519A /* QuestionViewController.m */,
 				89E268B519DF342A006D519A /* QuestionModel.h */,
 				89E268B619DF342A006D519A /* QuestionModel.m */,
+				8976B1B219DF85AF00168BFC /* Question.h */,
+				8976B1B319DF85AF00168BFC /* Question.m */,
+				89E268B219DF33FE006D519A /* QuestionViewController.h */,
+				89E268B319DF33FE006D519A /* QuestionViewController.m */,
+				8976B1B519DF939C00168BFC /* QuestionImportHeader.h */,
 			);
 			name = Question;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 				89E268C919DF3524006D519A /* StatsModel.m in Sources */,
 				89E268BD19DF34B8006D519A /* MenuModel.m in Sources */,
 				89E268BA19DF3494006D519A /* MenuViewController.m in Sources */,
+				8976B1B419DF85AF00168BFC /* Question.m in Sources */,
 				898F412919DE6D0900D585DE /* main.m in Sources */,
 				89E268B119DF308E006D519A /* SWRevealViewController.m in Sources */,
 			);

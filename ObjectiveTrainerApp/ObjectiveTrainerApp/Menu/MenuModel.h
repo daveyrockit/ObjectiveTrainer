@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-enum ScreenType {
+typedef enum ScreenType {
     ScreenTypeQuestion,
     ScreenTypeStats,
     ScreenTypeAbout,
     ScreenTypeRemoveAds
-};
+} MenuItemScreenType;
 
 @interface MenuModel : NSObject
 

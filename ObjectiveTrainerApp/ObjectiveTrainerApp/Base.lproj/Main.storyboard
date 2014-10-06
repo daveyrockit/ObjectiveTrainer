@@ -174,8 +174,40 @@
                     <view key="view" contentMode="scaleToFill" id="WWs-eo-Ksy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.043137256056070328" green="0.91764712333679199" blue="0.27450981736183167" alpha="1" colorSpace="deviceRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Questions Answered" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh4-zB-2sn">
+                                <rect key="frame" x="29" y="28" width="555" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97647064920000004" green="0.93725496529999996" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Easy Questions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGX-E9-pcU">
+                                <rect key="frame" x="29" y="101" width="555" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97647064920000004" green="0.93725496529999996" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hard Questions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fR-i5-jVj">
+                                <rect key="frame" x="29" y="247" width="555" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97647064920000004" green="0.93725496529999996" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medium Questions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpL-bz-Q60">
+                                <rect key="frame" x="29" y="174" width="555" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97647064920000004" green="0.93725496529999996" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.44269824430695587" green="0.7939453125" blue="0.38284410549436598" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="easyQuestionsStats" destination="UGX-E9-pcU" id="AJV-wa-BJT"/>
+                        <outlet property="hardQuestionsStats" destination="5fR-i5-jVj" id="YUq-PY-PbY"/>
+                        <outlet property="mediumQuestionsStats" destination="WpL-bz-Q60" id="fbQ-Xq-p2W"/>
+                        <outlet property="totalQuestionsLabel" destination="Hh4-zB-2sn" id="ewB-A8-mXK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ob-cv-7ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

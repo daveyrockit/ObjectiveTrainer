@@ -179,27 +179,17 @@
 
 - (IBAction)questionMCAnswer:(id)sender
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    // Record that they answered an MC question
-    // Increases total number of MC questions answered by 1
-    int mcQuestionsAnswered = [userDefaults integerForKey:@"MCQuestionsAnswered"];
-    mcQuestionsAnswered++;
-    [userDefaults setInteger:mcQuestionsAnswered forKey:@"MCQuestionsAnswered"];
-    
     UIButton *selectedButton = (UIButton *)sender;
+    BOOL isCorrect = NO;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     if (selectedButton.tag == _currentQuestion.correctMCQuestionIndex)
     {
         // User got it right
+        isCorrect = YES;
         
         // TODO: display message for correct answer
-        
-        // Record that they answered an MC question correctly
-        // Increases total number of MC questions answered correctly by 1
-        int mcQuestionsAnsweredCorrectly = [userDefaults integerForKey:@"MCQuestionsAnsweredCorrectly"];
-        mcQuestionsAnsweredCorrectly++;
-        [userDefaults setInteger:mcQuestionsAnsweredCorrectly forKey:@"MCQuestionsAnsweredCorrectly"];
         
     }
     else
@@ -208,7 +198,8 @@
         
     }
     
-    [userDefaults synchronize];
+    // Save the question data
+    [self saveQuestionData:_currentQuestion.questionType withDifficulty:_currentQuestion.questionDifficulty isCorrect:isCorrect];
     
     // Display next question
     [self randomizeQuestionForDisplay];
@@ -220,21 +211,7 @@
     
     // TODO: display message for correct answer
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    // Record that they answered an Image question
-    // Increases total number of Image questions answered by 1
-    int imageQuestionsAnswered = [userDefaults integerForKey:@"ImageQuestionsAnswered"];
-    imageQuestionsAnswered++;
-    [userDefaults setInteger:imageQuestionsAnswered forKey:@"ImageQuestionsAnswered"];
-    
-    // Record that they answered an Image question correctly
-    // Increases total number of Image questions answered correctly by 1
-    int imageQuestionsAnsweredCorrectly = [userDefaults integerForKey:@"ImageQuestionsAnsweredCorrectly"];
-    imageQuestionsAnsweredCorrectly++;
-    [userDefaults setInteger:imageQuestionsAnsweredCorrectly forKey:@"ImageQuestionsAnsweredCorrectly"];
-    
-    [userDefaults synchronize];
+    [self saveQuestionData:_currentQuestion.questionType withDifficulty:_currentQuestion.questionDifficulty isCorrect:YES];
     
     // Display next question
     [self randomizeQuestionForDisplay];
@@ -242,36 +219,91 @@
 
 - (IBAction)blankSubmitted:(id)sender
 {
-     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    // Record that they answered a Blank question
-    // Increases total number of Blank questions answered by 1
-    int blankQuestionsAnswered = [userDefaults integerForKey:@"BlankQuestionsAnswered"];
-    blankQuestionsAnswered++;
-    [userDefaults setInteger:blankQuestionsAnswered forKey:@"BlankQuestionsAnswered"];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSString *answer = self.blankTextField.text;
+    BOOL isCorrect = NO;
+    
     if ([answer isEqualToString:_currentQuestion.correctAnswerForBlank])
     {
         // User got it right
+        isCorrect = YES;
         
         // TODO: display message for correct answer
-        
-        // Record that they answered a Blank question correctly
-        // Increases total number of Blank questions answered correctly by 1
-        int blankQuestionsAnsweredCorrectly = [userDefaults integerForKey:@"BlankQuestionsAnsweredCorrectly"];
-        blankQuestionsAnsweredCorrectly++;
-        [userDefaults setInteger:blankQuestionsAnsweredCorrectly forKey:@"BlankQuestionsAnsweredCorrectly"];
     }
     else
     {
         // User got it wrong
     }
     
-    [userDefaults synchronize];
+    // Record question data
+    [self saveQuestionData:_currentQuestion.questionType withDifficulty:_currentQuestion.questionDifficulty isCorrect:isCorrect];
     
     // Display next question
     [self randomizeQuestionForDisplay];
+}
+
+    // Save question data, all correct and all answered, and increment
+- (void)saveQuestionData:(QuizQuestionType)type withDifficulty:(QuizQuestionDifficulty)difficulty isCorrect:(BOOL)correct
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // Save data based on type
+    NSString *keyToSaveForType = @"";
+    
+    if (type == QuestionTypeBlank)
+    {
+        keyToSaveForType = @"Blank";
+    }
+    else if (type == QuestionTypeMC)
+    {
+        keyToSaveForType = @"MC";
+    }
+    else if (type == QuestionTypeImage)
+    {
+        keyToSaveForType = @"Image";
+    }
+    
+    // Record that they answered an Image question
+    // Increases total number of Image questions answered by 1
+    int questionsAnsweredByType = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionsAnswered", keyToSaveForType]];
+    questionsAnsweredByType++;
+    [userDefaults setInteger:questionsAnsweredByType forKey:[NSString stringWithFormat:@"%@QuestionsAnswered", keyToSaveForType]];
+    
+    // Record that they answered an Image question correctly
+    // Increases total number of Image questions answered correctly by 1
+    int questionsAnsweredCorrectlyByType = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionsAnsweredCorrectly", keyToSaveForType]];
+    questionsAnsweredCorrectlyByType++;
+    [userDefaults setInteger:questionsAnsweredCorrectlyByType forKey:[NSString stringWithFormat:@"%@QuestionsAnsweredCorrectly", keyToSaveForType]];
+    
+    // Save data based on Difficulty
+    NSString *keyToSaveForDifficulty = @"";
+    
+    if (difficulty == QuestionDifficultyEasy)
+    {
+        keyToSaveForDifficulty = @"Easy";
+    }
+    else if (difficulty == QuestionDifficultyMedium)
+    {
+        keyToSaveForDifficulty = @"Medium";
+    }
+    else if (difficulty == QuestionDifficultyHard)
+    {
+        keyToSaveForDifficulty = @"Hard";
+    }
+    
+    int questionAnsweredWithDifficulty = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionsAnswered", keyToSaveForDifficulty]];
+    questionAnsweredWithDifficulty++;
+    [userDefaults setInteger:questionAnsweredWithDifficulty forKey:[NSString stringWithFormat:@"%@QuestionsAnswered", keyToSaveForDifficulty]];
+    
+    if (correct)
+    {
+        int questionAnsweredCorrectlyWithDifficulty = [userDefaults integerForKey:[NSString stringWithFormat:@"%@QuestionsAnsweredCorrectly", keyToSaveForDifficulty]];
+        questionAnsweredCorrectlyWithDifficulty++;
+        [userDefaults setInteger:questionAnsweredCorrectlyWithDifficulty forKey:[NSString stringWithFormat:@"%@QuestionsAnsweredCorrectly", keyToSaveForDifficulty]];
+    }
+    
+    [userDefaults synchronize];
 }
 
 -(void)scrollViewTapped
